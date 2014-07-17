@@ -5,10 +5,12 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href="bootstrap.min.css" rel="stylesheet">
-  <link href="carousel.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
   
 
 
@@ -19,7 +21,7 @@
 <body>
   <h1>Viva la Sleep</h1>
   <h2>Get work done. Sleep on time.</h2>
-  <body background="faded_background.jpg">
+  <body background="congruent_outline.png">
 
 
 
@@ -32,16 +34,16 @@
 <div>
 
 
-<div id='cssmenu'>
+<div id='cssmenu' style="z-index:5;">
 
 <ul>
 
    <li class='active'><a href='#'><span>About Us</span></a></li>
-   <li class='active'><a href='#'><span>Login</span></a>
+   <li class='active'><a href='landingpage.html'><span>Sign Out</span></a>
 
-    <ul>
+    <!--<ul class='dropdown'>
 
-      <body>
+      
         <script type = "text/javascript">
 
 
@@ -93,12 +95,12 @@ return false;
 </script>
 
 <form name = "myform">
-<p>Username <input id="username" type="text" name="username" placeholder="stevejobs@apple.com"> Password <input id="password" type="password" name="pword" placeholder="********">
-<input id= "signIn" type="button" value="Sign In" name="Submit">
+<p>Username <input type="text" name="username" placeholder="stevejobs@apple.com"> Password <input type="password" name="pword" placeholder="********">
+<input type="button" value="Sign In" name="Submit" onclick= "validate()">
 </p>
 
 </form>
-      </body>     
+        
       
 
 
@@ -106,7 +108,7 @@ return false;
 
        <a href="file:///C:/Users/ibour_000/Desktop/INTUIT/registration.html"><center>Sign Up! </center></a>
 
-    </ul>
+    </ul>-->
 
 
    </li>
@@ -125,7 +127,7 @@ return false;
 
 
       
-      <p>Please sign in to access your progress</p>
+      <p>Progress unavailable</p>
 
 
       
@@ -141,7 +143,7 @@ return false;
 
 
 
-        <p>Please sign in to access your schedule.</p>
+        <a>Add events</a>
 
 
         
@@ -158,7 +160,9 @@ return false;
 
 
 
-        <p>Please sign in to access your assignments.</p>
+        <p>No assignments</p>
+        <a href="assignmentinput.html">Click here to add assignments</a>
+
 
 
         
@@ -168,6 +172,7 @@ return false;
 </div>
 
 
+</body>
 
 
 <body style="padding:0px; margin:0px; font-family:Arial, Verdana;background-color:#fff;">
@@ -577,9 +582,6 @@ return false;
             </div>
             </div>
 
-
-
-
             <!-- Example to add fixed static share buttons in slider BEGIN -->
             <!-- Remove it if no need -->
             <!-- Share Button Styles -->
@@ -738,138 +740,7 @@ return false;
         jssor_slider1_starter('slider1_container');
     </script>
     <!-- Jssor Slider End -->
-
-
-
-
 </body>
-   
-
-
-
- 
-
-<script type="text/javascript">
-    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-$("#signIn").on('click', function(){
-  var username = $("#username").val();
-  var password = $("#password").val();
-  alert(username + " " + password);
-  authenticateUser(username, password);
-});
-
-
-/* Adding Username */
-var makeAssignment,getAssignment;
-
-//function to find an existing user
-var authenticateUser = function(username, password){
-  console.log(username, password);
-  var query = new Parse.Query("User");
-  query.equalTo("username", username);
-  query.equalTo("password", password);
-  query.find({
-    success: function(){
-      window.location.href = "Assignment.html";
-    },
-    error: function(){
-      //todo: add bootstrap error messages
-      /*
-        <div class="alert alert-danger" role="alert">
-          <a href="#" class="alert-link">...</a>
-        </div>
-      */
-
-
-      alert("Wrong username and password. Try again!")
-    }
-  });
-}
-
-
-
-var newUser = function (username, password){
-  var user = new Parse.User();
-  user.set("username", username);
-  user.set("password", password);
-  user.signUp(null, {
-    success: function(user) {
-      // Hooray! Let them use the app now.
-      alert("new user has been created", user.get("username"));
-    },
-    error: function(user, error) {
-      // Show the error message somewhere and let the user try again.
-      alert("Error: " + error.code + " " + error.message);
-
-    }
-  });
-}
-
-
-//Getting the class, if the class does not exist- parse will create the class first
-makeAssignment = function (assignmentName, username, time){
-  var Assignment = Parse.Object.extend("Assignment");
-
-  //Creating a new instance of the class
-  var assignment = new Assignment();
-  
-  var assignmentName = "Reading hw";
-  var time = 35;
-  var assignment_data = {assignment: assignmentName, username: username, time: time};
-
-  /* Save the Assignment */
-
-  assignment.save(assignment_data).then(function(object) {
-    //things to do after the save takes place
-    //alert("yay! it worked");
-    
-  });
-}
-
-getAssignment = function (username){
-  //get all the assignments for a user
-
-  var query = new Parse.Query("Assignment");
-  query.equalTo("username", username);
-  query.find({
-    success: function(results){
-      alert(" yes was able to get the assignments ");
-      for (var i = 1; i < results.length; i++){
-        console.log(results[i]);
-      }
-    },
-    error: function(){
-
-    }
-  });
-
-}
-
-var testOtherFunctions = function (){
-
-  /*testing newuser function*/
-  newUser("Issam", "password1");
-
-  /* Testing makeassignment function */
-  var assignmentName = "Reading hw";
-  var time = 35;
-  makeAssignment(assignmentName, "Issam", time);
-
-  getAssignment("Issam");
-}
-
-//get the username and password that the user has entered in the landing page
-
-
-
-
-
-</script>
-
-
-</body>
-
 
 
 </html>
