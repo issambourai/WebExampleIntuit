@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<meta charset = "utf-8">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+	<title>Registration </title>
+
+
+
+</head>
+<body>
+
+
+  <body background="congruent_outline.png">
+  
+ 
+
+
+</body>
+
+<body>
+<h1><font size="30">Registration </font></h1>
+
+<div style="text-align:right;size:30">
+	<form name="registration">
+
+		<label> <strong> Name: </strong></label> <br/>
+		<input name = "firstname" type="text" placeholder="First" required = "required"> &nbsp;
+		<input name = "lastname" type = "text" placeholder="Last" required = "required"> <br/> <br/>
+		<label> <strong> Username: </strong></label> <br/>
+		<input id="username" name = "username" type="text" required="required"> <br/> <br/>
+
+		<label> <strong> Password: </strong></label><br/>
+		<input id="password" name = "password" type="password" required="required"> <br/> <br/>
+
+		<input id="signUp" type= "submit" value = "Register">
+	</form>
+
+</div>
+ 
+<script type="text/javascript">
+    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+$("#signUp").on("click", function(e){
+	e.preventDefault();
+	newUser($("#username").val(), $("#password").val());
+	
+
+})
+
+var newUser = function (username, password){
+  var user = new Parse.User();
+  user.set("username", username);
+  user.set("password", password);
+  user.signUp(null, {
+    success: function(user) {
+      // Hooray! Let them use the app now.
+      alert("Please sign in with your new user name");
+      window.location.href = "Index.html";
+    },
+    error: function(user, error) {
+      // Show the error message somewhere and let the user try again.
+      alert("Error: " + error.code + " " + error.message);
+
+    }
+  });
+}
+</script>
+
+</body>
+</html>
+
+

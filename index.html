@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="carousel.css" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+  
+
+
+</head>
+  <title>Viva La Sleep prototype</title>
+
+
+<body>
+  <h1>Viva la Sleep</h1>
+  <h2>Get work done. Sleep on time.</h2>
+  <body background="congruent_outline.png">
+
+
+
+
+
+
+
+  
+
+<div>
+
+<div class="meter">
+  <span style="width: 25%"></span>
+</div>
+<div id='cssmenu'>
+
+<ul>
+
+   <li class='active'><a href='#'><span>About Us</span></a></li>
+   <li class='active'><a href='#'><span>Login</span></a>
+
+    <ul>
+
+      <body>
+        <script type = "text/javascript">
+
+
+var count = 2;
+function validate() {
+var un = document.myform.username.value;
+var pw = document.myform.pword.value;
+var valid = false;
+
+var unArray = ["Issam", "Arsh", "Abhay", "Varun"];  // as many as you like - no comma after final entry
+var pwArray = ["Bourai", "Saroya", "Varshney", "Agrawal"];  // the corresponding passwords;
+
+for (var i=0; i <unArray.length; i++) {
+if ((un == unArray[i]) && (pw == pwArray[i])) {
+valid = true;
+break;
+}
+}
+
+if (valid) {
+alert ("Login was successful");
+window.location = "index.html";
+return false;
+}
+
+var t = " tries";
+if (count == 1) {t = " try"}
+
+if (count >= 1) {
+alert ("Invalid username and/or password.  You have " + count + t + " left.");
+document.myform.username.value = "";
+document.myform.pword.value = "";
+setTimeout("document.myform.username.focus()", 25);
+setTimeout("document.myform.username.select()", 25);
+count --;
+}
+
+else {
+alert ("Still incorrect! You have no more tries left!");
+document.myform.username.value = "No more tries allowed!";
+document.myform.pword.value = "";
+document.myform.username.disabled = true;
+document.myform.pword.disabled = true;
+return false;
+}
+
+}
+
+</script>
+
+<form name = "myform">
+<p>Username <input id="username" type="text" name="username" placeholder="stevejobs@apple.com"> Password <input id="password" type="password" name="pword" placeholder="********">
+<input id= "signIn" type="button" value="Sign In" name="Submit">
+</p>
+
+</form>
+      </body>     
+      
+
+
+      <p>Don't have an account?</p>
+
+       <a href="file:///C:/Users/ibour_000/Desktop/INTUIT/registration.html"><center>Sign Up! </center></a>
+
+    </ul>
+
+
+   </li>
+
+
+    
+
+   
+
+    <li class='has-sub'><a href='#'><span>Progress</span></a>
+
+    <ul>
+
+
+      
+
+
+      
+      <p>Please sign in to access your progress</p>
+
+
+      
+
+        
+
+        </ul>
+
+    <li><a href='#'><span>Schedule</span></a>
+
+      <ul>
+
+
+
+
+        <p>Please sign in to access your schedule.</p>
+
+
+        
+
+      </ul>
+
+
+
+    </li>
+    <li><a href='#'><span>Assignments</span></a>
+
+      <ul>
+
+
+
+
+        <p>Please sign in to access your assignments.</p>
+
+
+        
+
+      </ul>
+
+</div>
+
+
+
+
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+   
+
+
+
+ 
+
+<script type="text/javascript">
+    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+$("#signIn").on('click', function(){
+  var username = $("#username").val();
+  var password = $("#password").val();
+  alert(username + " " + password);
+  authenticateUser(username, password);
+});
+
+
+/* Adding Username */
+var makeAssignment,getAssignment;
+
+//function to find an existing user
+var authenticateUser = function(username, password){
+  console.log(username, password);
+  var query = new Parse.Query("User");
+  query.equalTo("username", username);
+  query.equalTo("password", password);
+  query.find({
+    success: function(){
+      window.location.href = "Assignment.html";
+    },
+    error: function(){
+      //todo: add bootstrap error messages
+      /*
+        <div class="alert alert-danger" role="alert">
+          <a href="#" class="alert-link">...</a>
+        </div>
+      */
+
+
+      alert("Wrong username and password. Try again!")
+    }
+  });
+}
+
+
+
+var newUser = function (username, password){
+  var user = new Parse.User();
+  user.set("username", username);
+  user.set("password", password);
+  user.signUp(null, {
+    success: function(user) {
+      // Hooray! Let them use the app now.
+      alert("new user has been created", user.get("username"));
+    },
+    error: function(user, error) {
+      // Show the error message somewhere and let the user try again.
+      alert("Error: " + error.code + " " + error.message);
+
+    }
+  });
+}
+
+
+//Getting the class, if the class does not exist- parse will create the class first
+makeAssignment = function (assignmentName, username, time){
+  var Assignment = Parse.Object.extend("Assignment");
+
+  //Creating a new instance of the class
+  var assignment = new Assignment();
+  
+  var assignmentName = "Reading hw";
+  var time = 35;
+  var assignment_data = {assignment: assignmentName, username: username, time: time};
+
+  /* Save the Assignment */
+
+  assignment.save(assignment_data).then(function(object) {
+    //things to do after the save takes place
+    //alert("yay! it worked");
+    
+  });
+}
+
+getAssignment = function (username){
+  //get all the assignments for a user
+
+  var query = new Parse.Query("Assignment");
+  query.equalTo("username", username);
+  query.find({
+    success: function(results){
+      alert(" yes was able to get the assignments ");
+      for (var i = 1; i < results.length; i++){
+        console.log(results[i]);
+      }
+    },
+    error: function(){
+
+    }
+  });
+
+}
+
+var testOtherFunctions = function (){
+
+  /*testing newuser function*/
+  newUser("Issam", "password1");
+
+  /* Testing makeassignment function */
+  var assignmentName = "Reading hw";
+  var time = 35;
+  makeAssignment(assignmentName, "Issam", time);
+
+  getAssignment("Issam");
+}
+
+//get the username and password that the user has entered in the landing page
+
+
+
+
+
+</script>
+
+
+</body>
+
+
+
+</html>
