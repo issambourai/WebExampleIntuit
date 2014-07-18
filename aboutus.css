@@ -1,0 +1,15 @@
+img {
+	height: 300px;
+	width: auto;
+}
+
+.descriptions {
+	font-size: 1.25em;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+table {
+	margin: auto;
+}
