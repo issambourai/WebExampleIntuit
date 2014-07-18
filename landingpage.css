@@ -1,11 +1,12 @@
 h1{
-	color: #C0C0C0;
+	color: #ffffff;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
     letter-spacing: 0.05em;
 	font-weight: 300;
 	font-size: 5em;
 }
+
 h2, span {
 	color: #FFFFFF;
 	text-align: center;
@@ -14,13 +15,19 @@ h2, span {
     letter-spacing: 0.03em;
 }
 
- .jointherevolution, .aboutus, .assignments {
+ .jointherevolution, .aboutus, .howitworks {
     color: #ffffff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 0.05em;
+}
+
+#signIn {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    padding: 5px;
 }
 
 .tagLine {
