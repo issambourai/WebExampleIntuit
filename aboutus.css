@@ -11,6 +11,15 @@ img {
 	text-align: center;
 }
 
+.home, .aboutus, .howitworks, .login {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
 table {
 	margin: auto;
 	border-spacing: 15px;
