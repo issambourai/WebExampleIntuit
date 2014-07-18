@@ -286,6 +286,109 @@ form {
 
 }
 
+.addAssignment{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+/*
+.name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 5em;
+    color: #ffffff;
+    letter-spacing: 0.25em;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.span3 {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 35px;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.span2 {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 35px;
+    width: 125px;
+    margin-right: 5px;
+}
+.submit {
+    background-color: white;
+    border: 1px solid white;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.newMins, .mins {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.25em;
+}
+
+h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0.15em;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+}
+
+div {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.75em;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+body {
+    background-image: url('http://www.macwallhd.com/wp-content/Wallpapers/Abstract/Abstract%20Blur5.jpg');
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addRow {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+}
+
 
 
 

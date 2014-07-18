@@ -718,7 +718,10 @@
         query.equalTo("password", password);
         query.find({
           success: function(){
+            document.cookie="username=" + username;
             window.location.href = "index.html";
+
+
           },
           error: function(){
             //todo: add bootstrap error messages
@@ -753,26 +756,6 @@
         });
       }
 
-
-      //Getting the class, if the class does not exist- parse will create the class first
-      makeAssignment = function (assignmentName, username, time){
-        var Assignment = Parse.Object.extend("Assignment");
-
-        //Creating a new instance of the class
-        var assignment = new Assignment();
-        
-        var assignmentName = "Reading hw";
-        var time = 35;
-        var assignment_data = {assignment: assignmentName, username: username, time: time};
-
-        /* Save the Assignment */
-
-        assignment.save(assignment_data).then(function(object) {
-          //things to do after the save takes place
-          //alert("yay! it worked");
-          
-        });
-      }
 
       getAssignment = function (username){
         //get all the assignments for a user
