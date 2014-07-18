@@ -34,7 +34,7 @@
       <div id='cssmenu'>
         <ul>
          <li class='active'><a href='#'><span>About Us</span></a></li>
-         <li class='has-sub'><a href='#'><span>Progress</span></a>
+         <li class='has-sub'><a href='CircleProgressBar/backupprogressbar.html'><span>Progress</span></a>
           <li><a href='assignment.html'><span>Assignments</span></a>
             <li class='active'><a href='landingpage.html'><span>Sign Out</span></a></li>
           </ul>
@@ -250,6 +250,24 @@ var makeAssignmentList = function(username){
           }
         });
     });
+
+
+    var getCompletedAssignments = function(){
+      var Assignment = Parse.Object.extend("Assignment");
+      var query = new Parse.Query(Assignment);
+      query.equalTo("completed", 1);
+      query.equalTo("username", getUsername());
+      query.find({
+        success: function(results) {
+          console.log("no of completed assignments");
+          console.log(results.length);
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    };
+    getCompletedAssignments();
 
     </script>
 
