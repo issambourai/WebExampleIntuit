@@ -180,25 +180,29 @@ var makeAssignmentList = function(username){
 
     assignment.save(assignment_data, 
       {success: function(assignment) {
-            // Hooray! Let them use the app now.
-            var assignmentList = $("#assignmentList");
-            var tr = $('<tr></tr>');
-            var td = $('<td></td>').text(assignment.get("assignment"));
-            var td2 = $('<td></td>').text(assignment.get("time"));
+        //add the newly created assignment to the bottom of the table 
+        var assignmentList = $("#assignmentList");
+        var tr = $('<tr></tr>');
+        var td = $('<td></td>').text(assignment.get("assignment"));
+        var td2 = $('<td></td>').text(assignment.get("time"));
 
-            var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-            //add to the bottom of the list
-            $(tr).append(td);
-            $(tr).append(td2);
-            $(tr).append(btn);
-            assignmentList.append(tr);
-          },
-          error: function( assignment,error) {
-            // Show the error message somewhere and let the user try again.
-            alert("Error: " + error.code + " " + error.message);
+        var btn = '<td><button class="done-button" type="button"> Done</button></td>'
+        
+        $(tr).append(td);
+        $(tr).append(td2);
+        $(tr).append(btn);
+        assignmentList.append(tr);
 
-          }
-        });
+        //empty the asisgnment name and time form hte new assignment form
+        $("#assignment").val("");
+        $("#mins").val("");
+      },
+      error: function( assignment,error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+
+      }
+    });
       //things to do after the save takes place
     };
 
@@ -234,8 +238,9 @@ var makeAssignmentList = function(username){
         console.log(assignmentName);
 
         //replace the button with text that says "completed"
-        var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
-        $(this).fadeOut();   
+        $(this).replaceWith("<span style='color:green'>Completed</span>"); 
+        //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+          
 
         //in the database change completed status to 1
         var query = new Parse.Query("Assignment");
@@ -257,24 +262,6 @@ var makeAssignmentList = function(username){
           }
         });
     });
-
-
-    var getCompletedAssignments = function(){
-      var Assignment = Parse.Object.extend("Assignment");
-      var query = new Parse.Query(Assignment);
-      query.equalTo("completed", 1);
-      query.equalTo("username", getUsername());
-      query.find({
-        success: function(results) {
-          console.log("no of completed assignments");
-          console.log(results.length);
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-        }
-      });
-    };
-    getCompletedAssignments();
 
     </script>
 
