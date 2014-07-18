@@ -1,9 +1,9 @@
 h1{
-	color: #ffffff;
+	color: #C0C0C0;
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 0.25em;
-	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0.05em;
+	font-weight: 300;
 	font-size: 5em;
 }
 h2, span {
