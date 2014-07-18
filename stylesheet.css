@@ -1,11 +1,34 @@
 h1{
-	color: #ffffff;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 0.25em;
-	font-weight: lighter;
-	font-size: 5em;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    font-size: 5em;
 }
+
+.tagLine {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.50em;
+    letter-spacing: 0.1em;
+}
+
+.progress, .signout, .aboutus, .assignments {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+.signout {
+    text-align: right;
+}
+
 h2, span {
 	color: #FFFFFF;
 	text-align: center;
