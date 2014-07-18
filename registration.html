@@ -5,7 +5,9 @@
 <head>
 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+	<link rel="import" href="components/paper-elements/paper-elements.html">
 	<meta charset = "utf-8">
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -19,7 +21,7 @@
 <body>
 
 
-  <body background="congruent_outline.png">
+  <body background="abstractblur.jpg">
   
  
 
@@ -27,21 +29,22 @@
 </body>
 
 <body>
-<h1><font size="30">Registration </font></h1>
+<h1 class = 'registration'>Registration </font></h1>
 
 <div style="text-align:right;size:30">
 	<form name="registration">
 
-		<label> <strong> Name: </strong></label> <br/>
-		<input name = "firstname" type="text" placeholder="First" required = "required"> &nbsp;
-		<input name = "lastname" type = "text" placeholder="Last" required = "required"> <br/> <br/>
-		<label> <strong> Username: </strong></label> <br/>
-		<input id="username" name = "username" type="text" required="required"> <br/> <br/>
+		<label> Name: </label> <br/>
+		<input id = 'firstname' name = "firstname" type="text" placeholder="First" required = "required">
+		<paper-input label="First Name"></paper-input>
+		<input id = 'lastname' name = "lastname" type = "text" placeholder="Last" required = "required"> <br/> <br/>
+		<label> Username: </label> <br/>
+		<input id="username" name = "username" type="text" placeholder = 'example' required="required"> <br/> <br/>
 
-		<label> <strong> Password: </strong></label><br/>
-		<input id="password" name = "password" type="password" required="required"> <br/> <br/>
+		<label> Password: </label><br/>
+		<input id="password" name = "password" type="password" placeholder = '12345678' required="required"> <br/> <br/>
 
-		<input id="signUp" type= "submit" value = "Register">
+		<input class = 'button' id="signUp" type= "submit" value = "Register">
 	</form>
 
 </div>

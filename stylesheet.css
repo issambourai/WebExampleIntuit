@@ -9,15 +9,56 @@ h1{
 h2, span {
 	color: #FFFFFF;
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: lighter;
 	letter-spacing: 0.12em;
 }
 
+.registration {
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    font-size: 3.5em;
+}
+
+form {
+    color: #ffffff;
+    text-align: left;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+}
+
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	color: black;
+}
+
+#firstname, #lastname, #username, #password {
+    background-color: transparent;
+    text-align: left;
+    padding-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75em;
+    font-weight: 300;
+    border: 1px solid white;
+    height: 30px;
+    width: 150px;
+}
+
+.button {
+    background-color: white;
+    border: 1px solid white;
+    height: 50px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75em;
 }
 
 form {
@@ -78,7 +119,7 @@ form {
 
     color: rgb(160,160,160);
 
-    font-family: Verdana, 'Lucida Grande';
+    font-family: 'Roboto', sans-serif;
 
     font-size: 14px;
 
