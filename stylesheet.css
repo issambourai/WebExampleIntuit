@@ -352,6 +352,24 @@ form {
     width: 500px;
 }
 
+
+footer { 
+  font: 100% 'Droid Sans', arial, sans-serif;
+  color: blue;
+  height: 145px;
+  padding: 28px 0 5px 0;
+  text-align: center; 
+  background: #FFFFFF;
+  margin: 0;
+  border-top: 6px solid #DEC240;
+}
+
+footer p { 
+  line-height: 1.7em;
+  padding: 0 0 10px 0;
+}
+
+
 /*
 .name {
     font-family: 'Oswald', sans-serif;
