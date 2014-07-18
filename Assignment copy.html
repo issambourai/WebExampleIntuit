@@ -8,13 +8,83 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="carousel.css" rel="stylesheet">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  
+  <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+ 
+  <!--
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,300|Roboto:400,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
-  <link rel = 'stylesheet' type = 'text/css' href = 'stylesheet.css'>
+  <link rel = 'stylesheet' type = 'text/css' href = 'stylesheet.css'> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="CircleProgressBar/src/jquery.percentageloader-0.1.js"></script>
+    <link rel="stylesheet" href="CircleProgressBar/src/jquery.percentageloader-0.1.css"></script>
+ 
+ <!-- <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script> -->
+
   
+
+  <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      #topLoader {
+        width: 256px;
+        height: 256px;
+        margin-bottom: 32px;
+      }
+      
+      #container-progress{
+        width: 940px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      #animateButton {
+        width: 256px;
+      }
+    </style>
+
+    <script>
+       $(function() {
+          alert('in function');
+          var topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0.5, onProgressUpdate : function(val) {
+              topLoader.setValue(Math.round(val * 100.0));
+            }});
+
+          var topLoaderRunning = false;
+          $("#animateButton").click(function() {
+            alert('in animate function');
+            if (topLoaderRunning) {
+              return;
+            }
+            topLoaderRunning = true;
+            topLoader.setProgress(0);
+            topLoader.setValue('0kb');
+            var kb = 0;
+            var totalKb = 999;
+            //CHANGE THIS VARIABLE TO SET PROGRESS
+            var setKb = 200;
+            
+            var animateFunc = function() {
+              kb += 17;
+              topLoader.setProgress(kb / totalKb);
+              topLoader.setValue(kb.toString() + 'kb');
+              
+              if (kb < setKb) {
+                setTimeout(animateFunc, 25);
+              } else {
+                topLoaderRunning = false;
+              }
+            }
+            
+            setTimeout(animateFunc, 25);
+            
+          });
+        });  
+    </script>
 
 
 </head>
@@ -243,6 +313,22 @@ return false;
 
 </table>
 
+<!--
+  Adding progress bar
+-->
+
+<div id="container-progress">
+      <div id="topLoader"> 
+      test toploader 
+      </div>
+      
+      <button id="animateButton">Animate Loader</button>
+      
+      
+    </div>
+
+
+
 <script type="text/javascript">
 Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
@@ -279,13 +365,7 @@ $("#addNewAssignment").on('click', function(){
 
             assignmentList.append(tr);
           }
-
-        },
-          error: function( assignment,error) {
-            // Show the error message somewhere and let the user try again.
-            alert("Error: " + error.code + " " + error.message);
-
-          }
+        }
     })
   }
 
@@ -328,6 +408,9 @@ $("#addNewAssignment").on('click', function(){
   }
   var username = getUsername();
   makeAssignmentList(username);
+
+
+
 
 </script>
 

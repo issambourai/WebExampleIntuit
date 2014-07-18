@@ -706,23 +706,6 @@
       }
 
 
-      getAssignment = function (username){
-        //get all the assignments for a user
-
-        var query = new Parse.Query("Assignment");
-        query.equalTo("username", username);
-        query.find({
-          success: function(results){
-            alert(" yes was able to get the assignments ");
-            for (var i = 1; i < results.length; i++){
-              console.log(results[i]);
-            }
-          },
-          error: function(){
-
-          }
-        });
-
       }
 
       var testOtherFunctions = function (){
