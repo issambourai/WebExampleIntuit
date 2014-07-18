@@ -4,25 +4,59 @@
 Abhay below is the query for the time of the assignment
 
 var time = function (assignment){
-              var timing = assignment.get("time"));
-              return timing;
-            }
+      var timing = assignment.get("time"));
+      return timing;
+    }
   -->
 
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  
-  
+<!--
+
+function completion(assignment){
+  var Assignments = Parse.Object.extend("Assignment");
+  var assignment = new Assignments();
+   
+  Assignment.set("Completed", 1);
+   
+  assignment.save(null, {
+    success: function(assignment) {
+      alert("assignment completed");
+    }
+  });
+}
 
 
-</head>
+var Assignments = Parse.Object.extend("Assignment");
+var query = new Parse.Query(Assignment);
+query.equalTo("assignment", "Completed");
+query.find({
+  success: function(results) {
+    // Do something with the returned Parse.Object values
+    for (var i = 0; i < results.length; i++) {
+      var object = results[i];
+      alert(object.id + ' - ' + object.get('playerName'));
+    }
+  },
+  error: function(error) {
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+
+-->
+
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+
+
+
+  </head>
   <title>Viva la Sleep</title>
 
 
@@ -33,136 +67,25 @@ var time = function (assignment){
   <body background="gaussianblur.jpg">
 
 
-
-<div>
-
-
-<div id='cssmenu' style="z-index:5;">
-
-<ul>
-
-   <li class='active'><a href='aboutus.html'><span class = 'aboutus'>About Us</span></a></li>
-   <li class='active'><a href='landingpage.html'><span class = 'signout'>Sign Out</span></a>
-
-    <!--<ul class='dropdown'>
-
-      
-        <script type = "text/javascript">
+      <div>
 
 
-var count = 2;
-function validate() {
-var un = document.myform.username.value;
-var pw = document.myform.pword.value;
-var valid = false;
+        <div id='cssmenu' style="z-index:5;">
 
-var unArray = ["Issam", "Arsh", "Abhay", "Varun"];  // as many as you like - no comma after final entry
-var pwArray = ["Bourai", "Saroya", "Varshney", "Agrawal"];  // the corresponding passwords;
+          <ul>
+           <li class='active'><a href='aboutus.html'><span class = 'aboutus'>About Us</span></a></li>
+           <li class='has-sub'><a href='#'><span class = 'progress'>Progress</span></a>
+            <li><a href='assignment.html'><span class = 'assignments'>Assignments</span></a>
+              <li class='active'><a href='landingpage.html'><span class = 'signout'>Sign Out</span></a></li>
+            </ul>
 
-for (var i=0; i <unArray.length; i++) {
-if ((un == unArray[i]) && (pw == pwArray[i])) {
-valid = true;
-break;
-}
-}
-
-if (valid) {
-alert ("Login was successful");
-window.location = "index.html";
-return false;
-}
-
-var t = " tries";
-if (count == 1) {t = " try"}
-
-if (count >= 1) {
-alert ("Invalid username and/or password.  You have " + count + t + " left.");
-document.myform.username.value = "";
-document.myform.pword.value = "";
-setTimeout("document.myform.username.focus()", 25);
-setTimeout("document.myform.username.select()", 25);
-count --;
-}
-
-else {
-alert ("Still incorrect! You have no more tries left!");
-document.myform.username.value = "No more tries allowed!";
-document.myform.pword.value = "";
-document.myform.username.disabled = true;
-document.myform.pword.disabled = true;
-return false;
-}
-
-}
-
-</script>
-
-<form name = "myform">
-<p>Username <input type="text" name="username" placeholder="stevejobs@apple.com"> Password <input type="password" name="pword" placeholder="********">
-<input type="button" value="Sign In" name="Submit" onclick= "validate()">
-</p>
-
-</form>
-        
-      
+          </div>
 
 
-      <p>Don't have an account?</p>
-
-       <a href="file:///C:/Users/ibour_000/Desktop/INTUIT/registration.html"><center>Sign Up! </center></a>
-
-    </ul>-->
+        </body>
 
 
-   </li>
-
-
-    
-
-   
-
-    <li class='has-sub'><a href='#'><span class = 'progress'>Progress</span></a>
-
-    <ul>
-
-
-      
-
-
-      
-      <p>Progress unavailable</p>
-
-
-      
-
-        
-
-        </ul>
-
-
-    <li><a href='#'><span class = 'assignments'>Assignments</span></a>
-
-      <ul>
-
-
-
-
-        <p>No assignments</p>
-        <a href="assignmentinput.html">Click here to add assignments</a>
-
-
-
-        
-
-      </ul>
-
-</div>
-
-
-</body>
-
-
-<body style="padding:0px; margin:0px; font-family:Arial, Verdana;background-color:#fff;">
+        <body style="padding:0px; margin:0px; font-family:Arial, Verdana;background-color:#fff;">
 
 
     <!-- use jssor.slider.min.js for release -->
@@ -569,83 +492,22 @@ return false;
             </div>
             </div>
 
-            <!-- Example to add fixed static share buttons in slider BEGIN -->
-            <!-- Remove it if no need -->
-            <!-- Share Button Styles -->
-            <style>
-                .share-icon {
-                    display: inline-block;
-                    float: left;
-                    margin: 4px;
-                    width: 32px;
-                    height: 32px;
-                    cursor: pointer;
-                    vertical-align: middle;
-                    background-image: url(img/share/share-icons.png);
-                }
-
-                .share-facebook {
-                    background-position: 0px 0px;
-                }
-
-                    .share-facebook:hover {
-                        background-position: 0px -40px;
-                    }
-
-        .share-twitter {
-            background-position: -40px 0px;
-        }
-
-            .share-twitter:hover {
-                background-position: -40px -40px;
-            }
-
-        .share-pinterest {
-            background-position: -80px 0px;
-        }
-
-            .share-pinterest:hover {
-                background-position: -80px -40px;
-            }
-
-                .share-linkedin {
-                    background-position: -240px 0px;
-                }
-
-                    .share-linkedin:hover {
-                        background-position: -240px -40px;
-                    }
-
-
-                .share-googleplus {
-                    background-position: -120px 0px;
-                }
-
-                    .share-googleplus:hover {
-                        background-position: -120px -40px;
-                    }
-
-
-        .share-stumbleupon {
-            background-position: -360px 0px;
-        }
-
-            .share-stumbleupon:hover {
-                background-position: -360px -40px;
-            }
-
-                .share-email {
-                    background-position: -320px 0px;
-                }
-
-                    .share-email:hover {
-                        background-position: -320px -40px;
-                    }
-            </style>
+            
 
             <!-- Example to add fixed static share buttons in slider BEGIN -->
             <!-- Remove it if no need -->
-                        <!-- Example to add fixed static share buttons in slider END -->
+            <div u="any" style="position: absolute; display: block; top: 6px; right: 170px; width: 280px; height: 40px;">
+
+
+                <a class="share-icon share-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://jssor.com" title="Share on Facebook"></a>
+                <a class="share-icon share-twitter" target="_blank" href="http://twitter.com/share?url=http://jssor.com&text=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on Twitter"></a>
+                <a class="share-icon share-googleplus" target="_blank" href="https://plus.google.com/share?url=http://jssor.com" title="Share on Google Plus"></a>
+                <a class="share-icon share-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://jssor.com" title="Share on LinkedIn"></a>
+                <a class="share-icon share-stumbleupon" target="_blank" href="http://www.stumbleupon.com/submit?url=http://jssor.com&title=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on StumbleUpon"></a>
+                <a class="share-icon share-pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://jssor.com&media=http://jssor.com/img/site/jssor.slider.jpg&description=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on Pinterst"></a>
+                <a class="share-icon share-email" target="_blank" href="mailto:?Subject=Jssor%20Slider&Body=Highly%20recommended%20jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive%20http://jssor.com" title="Share by Email"></a>
+            </div>
+            <!-- Example to add fixed static share buttons in slider END -->
         </div>
                 
         <!-- Bullet Navigator Skin Begin -->
