@@ -16,7 +16,7 @@ h1{
     letter-spacing: 0.1em;
 }
 
-.progress, .signout, .aboutus, .assignments {
+.home, .progress, .signout, .aboutus, .assignments {
     color: #ffffff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
