@@ -2,8 +2,14 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
     <script src="src/jquery.percentageloader-0.1.js"></script>
     <link rel="stylesheet" href="src/jquery.percentageloader-0.1.css"></script>
+
 
     <style>
       body {
@@ -38,6 +44,7 @@
       <button id="animateButton">Animate Loader</button>
       
        <script>
+       Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
         $(function() {
           var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0.5, onProgressUpdate : function(val) {
               $topLoader.setValue(Math.round(val * 100.0));
@@ -71,6 +78,48 @@
             setTimeout(animateFunc, 25);
             
           });
+
+           var getUsername = function (){
+            var half = (document.cookie).substring(9);
+            var array = (half).split(";");
+            var username = array[0];
+            return username;
+          };
+
+          var numberOfCompletedAssignments = function(){
+            var Assignment = Parse.Object.extend("Assignment");
+            var query = new Parse.Query(Assignment);
+            query.equalTo("username", getUsername());
+            query.equalTo("completed", 1);
+            query.find({
+              success: function(results) {
+                console.log(results.length);
+              },
+              error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+            });
+          };
+          
+          var numberOfTotalAssignments = function(){
+            var Assignment = Parse.Object.extend("Assignment");
+            var query = new Parse.Query(Assignment);
+            query.equalTo("username", getUsername());
+            query.find({
+              success: function(results) {
+                console.log(results.length);
+              },
+              error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+            });
+          }
+
+          var totalAssignments = numberOfTotalAssignments();
+          var completedAssignments = numberOfCompletedAssignments();
+          console.log(totalAssignments);
+          console.log(completedAssignments);
+
         });      
       </script>
     </div>
