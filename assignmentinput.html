@@ -1,43 +1,58 @@
 <HTML>
 <TITLE>Testing</TITLE>
 <HEAD>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-     $('<div/>', {
-         'class' : 'extraPerson', html: GetHtml()
-     }).appendTo('#container');
-     $('#addRow').click(function () {
-           $('<div/>', {
-               'class' : 'extraPerson', html: GetHtml()
-     }).hide().appendTo('#container').slideDown('slow');
+<div>
+            <script type = 'text/javascript'>
+            function changeThis() {
+                var assignmentInput = document.getElementById('assignment');
+                document.getElementById('newAssign').innerHTML = assignmentInput.value;
+                var minsInput = document.getElementById('mins');
+                document.getElementById('newMins').innerHTML = minsInput.value;
+            }
+            </script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                $('<div/>', {
+                    'class' : 'extraPerson', html: GetHtml()
+                     }).appendTo('#container');
+                $('#addRow').click(function () {
+                $('<div/>', {
+                    'class' : 'extraPerson', html: GetHtml()
+                    }).hide().appendTo('#container').slideDown('slow');
          
-     });
- })
- function GetHtml()
-{
-      var len = $('.extraPerson').length;
-    var $html = $('.extraPersonTemplate').clone();
-    $html.find('[name=assignment]')[0].name="assignment" + len;
-    $html.find('[name=time]')[0].name="time" + len;
-    $html.find('[name=unit]')[0].name="unit" + len;
-    return $html.html();    
-}
-</script>
-</HEAD>
-<BODY>
-<div class="extraPersonTemplate">
-    <div class="controls controls-row">
-        <input class="span3" placeholder="Assignment" type="text" name="assignment">
-        <input class="span3" placeholder="Enter a number" type="text" name="time">
-        <select class="span2" name="unit">
-            <option value = "Seconds">Seconds</option>
-            <option value = "Minutes">Minutes</option>
-            <option value = "Hours">Hours</option>
-        </select>
-    </div>
-</div>
-<div id="container"></div>
-<a href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add another assignment</p></a>
-</BODY>
+                });
+            })
+
+            function GetHtml()
+            {
+            var len = $('.extraPerson').length;
+            var $html = $('.extraPersonTemplate').clone();
+            $html.find('[name=assignment]')[0].name="assignment" + len;
+            $html.find('[name=mins]')[0].name="mins" + len;
+            return $html.html();    
+            }
+            </script>
+
+        <div class="extraPersonTemplate">
+            <div class="controls controls-row">
+            <label>
+                <input id = "assignment" class="span3" placeholder="Assignment" type="text" name="assignment">
+                <input id = "mins" class="span2" placeholder="Enter minutes" type="text" name="mins">
+                <input class="submit" type="submit" value="Submit" onclick= 'changeThis()'>
+                </select>
+            </label>
+            </div>
+        </div> 
+        <div id="container"></div>
+        <a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a>
+        </div>
+
+        <div> <!-- Display added assignments -->
+            <p>Your assignments for today:</p>
+            <p class = 'mins'>
+                <span class = 'newAssign' id='newAssign'></span> - <span class = 'newMins' id = 'newMins'> </span>
+                mins
+            </p>
+        </div></BODY>
 </HTML>
