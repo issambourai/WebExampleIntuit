@@ -45,7 +45,17 @@ p {
     font-weight: 300;
 	text-align: center;
     color: black;
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+#username, #password {
+    height: 30px;
+    background-color: transparent;
+    padding-left: 5px;
+    border: 1px solid white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.7em;
 }
 
 a {
@@ -336,11 +346,11 @@ form {
 
 footer { 
   font: 100% 'Droid Sans', arial, sans-serif;
-  height: 125px;
+  color: blue;
+  height: 145px;
   padding: 28px 0 5px 0;
   text-align: center; 
   background: #FFFFFF;
-  color: #F0FFFF;
   margin: 0;
   border-top: 6px solid #DEC240;
 }
