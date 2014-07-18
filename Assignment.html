@@ -279,7 +279,13 @@ $("#addNewAssignment").on('click', function(){
 
             assignmentList.append(tr);
           }
-        }
+
+        },
+          error: function( assignment,error) {
+            // Show the error message somewhere and let the user try again.
+            alert("Error: " + error.code + " " + error.message);
+
+          }
     })
   }
 
