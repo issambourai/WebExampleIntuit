@@ -61,7 +61,7 @@
               $('<div/>', {
                 'class' : 'extraPerson', html: GetHtml()
               }).hide().appendTo('#container').slideDown('slow');
-              
+
             });
           })
 
@@ -113,7 +113,7 @@
       Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
       $("#addNewAssignment").on('click', function(){
-        
+
         var username = getUsername();
         var assignment = $("#assignment").val();
         var time = parseInt($("#mins").val());
@@ -127,7 +127,7 @@ var makeAssignmentList = function(username){
   query.equalTo("username", username);
   query.find({
     success: function(results){
-      
+
 
       for(var i = 1; i < results.length; i++ ){
         console.log(results[i].get("assignment"));
@@ -158,7 +158,6 @@ var makeAssignmentList = function(username){
 
   //Function for creating a new assignment and adding to the database
   var createNewAssignment = function (assignmentName, username, time){
-    alert(assignmentName, username, time);
     var Assignment = Parse.Object.extend("Assignment");
 
     //Creating a new instance of the class
@@ -173,9 +172,17 @@ var makeAssignmentList = function(username){
     assignment.save(assignment_data, 
       {success: function(assignment) {
             // Hooray! Let them use the app now.
-            var assignmentList = $("#assignments");
+            var assignmentList = $("#assignmentList");
+            var tr = $('<tr></tr>');
+            var td = $('<td></td>').text(assignment.get("assignment"));
+            var td2 = $('<td></td>').text(assignment.get("time"));
 
-            assignmentList.append('<li class="list-group-item list-group-item-success" style="text-align:center">'+ assignment.get("assignment") + "</li>");
+            var btn = '<td><button class="done" type="button"> Done</button></td>'
+            //add to the bottom of the list
+            $(tr).append(td);
+            $(tr).append(td2);
+            $(tr).append(btn);
+            assignmentList.append(tr);
           },
           error: function( assignment,error) {
             // Show the error message somewhere and let the user try again.
