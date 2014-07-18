@@ -346,11 +346,11 @@ form {
 
 footer { 
   font: 100% 'Droid Sans', arial, sans-serif;
-  height: 125px;
+  color: blue;
+  height: 145px;
   padding: 28px 0 5px 0;
   text-align: center; 
   background: #FFFFFF;
-  color: #F0FFFF;
   margin: 0;
   border-top: 6px solid #DEC240;
 }
