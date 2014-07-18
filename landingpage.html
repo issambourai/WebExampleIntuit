@@ -700,10 +700,19 @@
     $(document).ready(function(){
       Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
-      $("#signIn").on('click', function(){
+      $("#signIn").on('click', function(e){
+        e.preventDefault();
         var username = $("#username").val();
         var password = $("#password").val();
+        if(username.length < 0){
+          alert("Please type in your username"); 
+        }
+        if(password.length < 0){
+          alert("Please type in your password"); 
+        }
+
         authenticateUser(username, password);
+
       });
 
 
@@ -712,27 +721,18 @@
 
       //function to find an existing user
       var authenticateUser = function(username, password){
-        console.log(username, password);
-        var query = new Parse.Query("User");
-        query.equalTo("username", username);
-        query.equalTo("password", password);
-        query.find({
-          success: function(){
-            document.cookie="username=" + username;
-            window.location.href = "index.html";
+        
 
+        Parse.User.logIn(username, password, {
+          success: function(user) {
+            // Do stuff after successful login.
+             document.cookie="username=" + username;
+             window.location.href = "index.html";
 
           },
-          error: function(){
-            //todo: add bootstrap error messages
-            /*
-              <div class="alert alert-danger" role="alert">
-                <a href="#" class="alert-link">...</a>
-              </div>
-            */
-            alert("Wrong username and password. Try again!") 
-            window.location.href = "landingpage.html";
-            
+          error: function(user, error) {
+            // The login failed. Check error to see why.
+            alert("Incorrect password or username");
           }
         });
       }
