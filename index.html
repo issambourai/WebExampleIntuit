@@ -11,32 +11,33 @@ var time = function (assignment){
 
 <!--
 
-    This is for changing the status for an assignment to complete
-
-    var assingmentStatus = function (assignment, done){
-
-    assignment.save(done, {
-      success: function(user) {
-        // Hooray! Let them use the app now.
-        user.set("Completed", 1);
-      },
-      error: function(user, error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
-
-      }
-    });
-  }
-
+function completion(assignment){
+  var Assignments = Parse.Object.extend("Assignment");
+  var assignment = new Assignments();
+   
+  Assignment.set("Completed", 1);
+   
+  assignment.save(null, {
+    success: function(assignment) {
+      alert("assignment completed");
+    }
+  });
+}
 
 
 var Assignments = Parse.Object.extend("Assignment");
-var assignment = new Assignments();
- 
-Assignment.set("Completed", 1);
- 
-assignment.save(null, {
-  success: function(assignment) {
+var query = new Parse.Query(Assignment);
+query.equalTo("assignment", "Completed");
+query.find({
+  success: function(results) {
+    // Do something with the returned Parse.Object values
+    for (var i = 0; i < results.length; i++) {
+      var object = results[i];
+      alert(object.id + ' - ' + object.get('playerName'));
+    }
+  },
+  error: function(error) {
+    alert("Error: " + error.code + " " + error.message);
   }
 });
 
