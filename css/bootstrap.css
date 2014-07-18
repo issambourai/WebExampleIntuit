@@ -120,6 +120,9 @@ textarea {
 button {
   overflow: visible;
 }
+.done{
+  margin-top:20px;
+}
 button,
 select {
   text-transform: none;
@@ -2127,6 +2130,10 @@ th {
 .table-striped > tbody > tr:nth-child(even) > td,
 .table-striped > tbody > tr:nth-child(even) > th {
   background-color: #f8f8ff;
+}
+
+.table-striped {
+  width: 600px;
 }
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
