@@ -9,6 +9,39 @@ var time = function (assignment){
     }
   -->
 
+<!--
+
+    This is for changing the status for an assignment to complete
+
+    var assingmentStatus = function (assignment, done){
+
+    assignment.save(done, {
+      success: function(user) {
+        // Hooray! Let them use the app now.
+        user.set("Completed", 1);
+      },
+      error: function(user, error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+
+      }
+    });
+  }
+
+
+
+var Assignments = Parse.Object.extend("Assignment");
+var assignment = new Assignments();
+ 
+Assignment.set("Completed", 1);
+ 
+assignment.save(null, {
+  success: function(assignment) {
+  }
+});
+
+-->
+
   <html>
   <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
