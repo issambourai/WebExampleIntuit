@@ -1,15 +1,15 @@
 h1{
 	color: #C0C0C0;
 	text-align: center;
-	font-family: 'Oswald', sans-serif;
-	letter-spacing: 0.25em;
-	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.05em;
+	font-weight: 300;
 	font-size: 5em;
 }
 h2, span {
 	color: #FFFFFF;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
     letter-spacing: 0.03em;
 }
@@ -17,7 +17,7 @@ h2, span {
  .jointherevolution, .aboutus, .assignments {
     color: #ffffff;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 0.05em;
@@ -25,15 +25,15 @@ h2, span {
 
 .tagLine {
     color: #ffffff;
-    text-align: centerl;
-    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 1.50em;
     letter-spacing: 0.1em;
 }
 
 p {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 	text-align: center;
     color: black;
@@ -89,6 +89,8 @@ form {
 	text-align: center;
 
 	background-color: rgb(35,35,35); 
+
+    /* opacity: 0.5; puts dropdowns behind slideshow */ 
 
 	box-shadow: 0px 2px 3px rgba(0,0,0,.4);
 	

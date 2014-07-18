@@ -1,7 +1,7 @@
 h1{
-	color: #C0C0C0;
+	color: #ffffff;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 0.25em;
 	font-weight: lighter;
 	font-size: 5em;
@@ -9,7 +9,7 @@ h1{
 h2, span {
 	color: #FFFFFF;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: lighter;
 	letter-spacing: 0.12em;
 }
@@ -18,7 +18,7 @@ h2, span {
     color: #ffffff;
     text-align: center;
     display: block;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 100;
     letter-spacing: 0.1em;
     font-size: 3.5em;
@@ -28,14 +28,14 @@ form {
     color: #ffffff;
     text-align: left;
     display: block;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     letter-spacing: 0.1em;
     font-size: 1.5em;
 }
 
 p {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	color: black;
 }
@@ -57,13 +57,13 @@ p {
     border: 1px solid white;
     height: 50px;
     font-weight: 300;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.75em;
 }
 
 form {
 	text-align: center;
-	color: #C0C0C0;
+	color: #ffffff;
 }
 
 
