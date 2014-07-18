@@ -138,23 +138,30 @@ var makeAssignmentList = function(username){
         var tr = $('<tr></tr>');
         var td = $('<td></td>').text(results[i].get("assignment"));
         var td2 = $('<td></td>').text(results[i].get("time"));
+        var text = "<td><span style='color:green'>Completed</span></td>";
+        var btn = '<td><button class="done-button" type="button"> Done</button></td>';
 
-        var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-            //add to the bottom of the list
-            $(tr).append(td);
-            $(tr).append(td2);
-            $(tr).append(btn);
+        $(tr).append(td);
+        $(tr).append(td2);
 
-            assignmentList.append(tr);
-          }
+        if (results[i].get("completed") == 1){
+          $(tr).append(text);
+        }
+        else{
+          $(tr).append(btn);
+        }
+        
 
-        },
-        error: function( assignment,error) {
-            // Show the error message somewhere and let the user try again.
-            alert("Error: " + error.code + " " + error.message);
+        assignmentList.append(tr);
+      }
 
-          }
-        });
+    },
+    error: function( assignment,error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+
+      }
+    });
 };
 
 
