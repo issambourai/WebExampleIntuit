@@ -334,6 +334,22 @@ form {
 
 }
 
+footer { 
+  font: 100% 'Droid Sans', arial, sans-serif;
+  height: 125px;
+  padding: 28px 0 5px 0;
+  text-align: center; 
+  background: #FFFFFF;
+  color: #F0FFFF;
+  margin: 0;
+  border-top: 6px solid #DEC240;
+}
+
+footer p { 
+  line-height: 1.7em;
+  padding: 0 0 10px 0;
+}
+
 
 
 
