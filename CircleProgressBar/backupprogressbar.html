@@ -108,9 +108,11 @@
             query.find({
               success: function(results) {
                 console.log(results.length);
+                return results.length;
               },
               error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
+                return 0;
               }
             });
           }
