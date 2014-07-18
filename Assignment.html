@@ -18,7 +18,7 @@
 
 
 </head>
-  <title>Viva La Sleep prototype</title>
+<title>Viva La Sleep prototype</title>
 
 
 <body>
@@ -26,252 +26,118 @@
   <h2>Get work done. Sleep on time.</h2>
   <body background="congruent_outline.png">
 
-
-
-
-
-
-
-  
-
-<div>
-
-<div class="meter">
-  <span style="width: 25%"></span>
-</div>
-<div id='cssmenu'>
-
-<ul>
-
-   <li class='active'><a href='#'><span>Home</span></a></li>
-   <li class='active'><a href='#'><span>Login</span></a>
-
-    <ul>
-
-      <body>
-        <!--script type = "text/javascript">
-
-
-var count = 2;
-function validate() {
-var un = document.myform.username.value;
-var pw = document.myform.pword.value;
-var valid = false;
-
-var unArray = ["Issam", "Arsh", "Abhay", "Varun"];  // as many as you like - no comma after final entry
-var pwArray = ["Bourai", "Saroya", "Varshney", "Agrawal"];  // the corresponding passwords;
-
-for (var i=0; i <unArray.length; i++) {
-if ((un == unArray[i]) && (pw == pwArray[i])) {
-valid = true;
-break;
-}
-}
-
-if (valid) {
-alert ("Login was successful");
-window.location = "index.html";
-return false;
-}
-
-var t = " tries";
-if (count == 1) {t = " try"}
-
-if (count >= 1) {
-alert ("Invalid username and/or password.  You have " + count + t + " left.");
-document.myform.username.value = "";
-document.myform.pword.value = "";
-setTimeout("document.myform.username.focus()", 25);
-setTimeout("document.myform.username.select()", 25);
-count --;
-}
-
-else {
-alert ("Still incorrect! You have no more tries left!");
-document.myform.username.value = "No more tries allowed!";
-document.myform.pword.value = "";
-document.myform.username.disabled = true;
-document.myform.pword.disabled = true;
-return false;
-}
-
-}
-
-</script-->
-
-<form name = "myform">
-<p>Username <input id="username" type="text" name="username" placeholder="stevejobs@apple.com"> Password <input id="password" type="password" name="pword" placeholder="********">
-<input type="button" value="Sign In" name="Submit" onclick= "validate()">
-</p>
-
-</form>
-      </body>     
-      
-
-
-      <p>Don't have an account?</p>
-
-       <a href="registration.html"><center>Sign Up! </center></a>
-
-    </ul>
-
-
-   </li>
-
-
-    
-
-   
-
-    <li class='has-sub'><a href='#'><span>Progress</span></a>
-
-    <ul>
-
-
-      
-
-
-      
-      <p>Please sign in to access your progress</p>
-
-
-      
-
-        
-
-        </ul>
-
-    <li><a href='#'><span>Schedule</span></a>
-
-      <ul>
-
-
-
-
-        <p>Please sign in to access your schedule.</p>
-
-
-        
-
-      </ul>
-
-
-
-    </li>
-    <li><a href='#'><span>Assignments</span></a>
-
-      <ul>
-
-
-
-
-        <p>Please sign in to access your assignments.</p>
-
-
-        
-
-  </ul>
-
-</div>
-
-<!-- Adding an assignment -->
-<div class="addAssignment">
-  <h3 style="text-align:center"> Add new assignments below </h3>
-      <script type = 'text/javascript'>
-      function changeThis() {
-        var assignmentInput = document.getElementById('assignment');
-        document.getElementById('newAssign').innerHTML = assignmentInput.value;
-                var minsInput = document.getElementById('mins');
-                document.getElementById('newMins').innerHTML = minsInput.value;
-      }
-      </script>
-      <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                $('<div/>', {
-                    'class' : 'extraPerson', html: GetHtml()
-                     }).appendTo('#container');
-                $('#addRow').click(function () {
-                $('<div/>', {
-                    'class' : 'extraPerson', html: GetHtml()
-                    }).hide().appendTo('#container').slideDown('slow');
-         
-                });
-            })
-
-            function GetHtml()
-            {
+    <div id="lower_body">
+
+      <div class="meter">
+        <span style="width: 25%"></span>
+      </div>
+      <div id='cssmenu'>
+        <ul>
+         <li class='active'><a href='#'><span>About Us</span></a></li>
+         <li class='has-sub'><a href='#'><span>Progress</span></a>
+          <li><a href='assignment.html'><span>Assignments</span></a>
+            <li class='active'><a href='landingpage.html'><span>Sign Out</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Adding an assignment -->
+        <div class="addAssignment">
+          <h3 style="text-align:center"> Add new assignments below </h3>
+          <script type = 'text/javascript'>
+          function changeThis() {
+            var assignmentInput = document.getElementById('assignment');
+            document.getElementById('newAssign').innerHTML = assignmentInput.value;
+            var minsInput = document.getElementById('mins');
+            document.getElementById('newMins').innerHTML = minsInput.value;
+          }
+          </script>
+          <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+          <script type="text/javascript">
+          $(document).ready(function () {
+            $('<div/>', {
+              'class' : 'extraPerson', html: GetHtml()
+            }).appendTo('#container');
+            $('#addRow').click(function () {
+              $('<div/>', {
+                'class' : 'extraPerson', html: GetHtml()
+              }).hide().appendTo('#container').slideDown('slow');
+              
+            });
+          })
+
+          function GetHtml()
+          {
             //var len = $('.extraPerson').length;
             //var $html = $('.extraPersonTemplate').clone();
             //$html.find('[name=assignment]')[0].name="assignment" + len;
             //$html.find('[name=mins]')[0].name="mins" + len;
             //return $html.html();    
-            }
-            </script>
+          }
+          </script>
 
-        <div class="extraPersonTemplate">
+          <div class="extraPersonTemplate">
             <div class="controls controls-row">
-            <label>
+              <label>
                 <input id="assignment" class="span3" placeholder="Assignment" type="text" name="assignment">
                 <input id="mins" class="span2" placeholder="Enter minutes" type="text" name="mins">
                 <input id="addNewAssignment" class="submit" type="submit" value="Submit">
-                </select>
+              </select>
             </label>
-            </div>
+          </div>
         </div> 
         <div id="container"></div>
         <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
-    </div>
+      </div>
 
-<!-- Display added assignments -->
-<h3 style="text-align:center"> View assignments for today here </h3>
-<ul id="assignments" class="list-group">
-  <!-- here the  assignments will be inserted -->
-  <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
-</ul>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th style="color:white">Assignment Name</th>
-      <th>Time (in Minutes)</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody id="assignmentList">
+      <!-- Display added assignments -->
+      <h3 style="text-align:center"> View assignments for today here </h3>
+      <ul id="assignments" class="list-group">
+        <!-- here the  assignments will be inserted -->
+        <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
+      </ul>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="color:white">Assignment Name</th>
+            <th>Time (in Minutes)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="assignmentList">
 
-  </tbody>
+        </tbody>
 
-</table>
+      </table>
 
-<script type="text/javascript">
-Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+      <script type="text/javascript">
+      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
-$("#addNewAssignment").on('click', function(){
-    
-    var username = getUsername();
-    var assignment = $("#assignment").val();
-    var time = parseInt($("#mins").val());
-    createNewAssignment( assignment, username, time);
+      $("#addNewAssignment").on('click', function(){
+        
+        var username = getUsername();
+        var assignment = $("#assignment").val();
+        var time = parseInt($("#mins").val());
+        createNewAssignment( assignment, username, time);
 
-})
+      })
 
 //  making the list of assignment in the ui from the assignments pulled from the database
-  var makeAssignmentList = function(username){
-    var query = new Parse.Query("Assignment");
-    query.equalTo("username", username);
-    query.find({
-        success: function(results){
-          
+var makeAssignmentList = function(username){
+  var query = new Parse.Query("Assignment");
+  query.equalTo("username", username);
+  query.find({
+    success: function(results){
+      
 
-          for(var i = 1; i < results.length; i++ ){
-            console.log(results[i].get("assignment"));
-            var assignmentList = $("#assignmentList");
+      for(var i = 1; i < results.length; i++ ){
+        console.log(results[i].get("assignment"));
+        var assignmentList = $("#assignmentList");
 
-            var tr = $('<tr></tr>');
-            var td = $('<td></td>').text(results[i].get("assignment"));
-            var td2 = $('<td></td>').text(results[i].get("time"));
+        var tr = $('<tr></tr>');
+        var td = $('<td></td>').text(results[i].get("assignment"));
+        var td2 = $('<td></td>').text(results[i].get("time"));
 
-            var btn = '<td><button class="done" type="button"> Done</button></td>'
+        var btn = '<td><button class="done" type="button"> Done</button></td>'
             //add to the bottom of the list
             $(tr).append(td);
             $(tr).append(td2);
@@ -281,13 +147,13 @@ $("#addNewAssignment").on('click', function(){
           }
 
         },
-          error: function( assignment,error) {
+        error: function( assignment,error) {
             // Show the error message somewhere and let the user try again.
             alert("Error: " + error.code + " " + error.message);
 
           }
-    })
-  }
+        })
+}
 
 
   //Function for creating a new assignment and adding to the database
@@ -318,21 +184,21 @@ $("#addNewAssignment").on('click', function(){
           }
         });
       //things to do after the save takes place
-  };
+    };
 
-  var getUsername = function (){
-    var half = (document.cookie).substring(9);
-    var array = (half).split(";");
-    var username = array[0];
-    return username;
-  }
-  var username = getUsername();
-  makeAssignmentList(username);
+    var getUsername = function (){
+      var half = (document.cookie).substring(9);
+      var array = (half).split(";");
+      var username = array[0];
+      return username;
+    }
+    var username = getUsername();
+    makeAssignmentList(username);
 
-</script>
+    </script>
 
-</body>
+  </body>
 
 
 
-</html>
+  </html>
