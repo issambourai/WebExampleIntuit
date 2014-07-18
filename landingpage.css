@@ -14,20 +14,21 @@ h2, span {
     letter-spacing: 0.03em;
 }
 
-.active, .has-sub {
+ .jointherevolution, .aboutus, .assignments {
     color: #ffffff;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
+    font-weight: 300;
+    font-size: 1.5em;
     letter-spacing: 0.05em;
 }
 
 .tagLine {
     color: #ffffff;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
+    text-align: centerl;
+    font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    font-size: 1.25em;
+    font-size: 1.50em;
     letter-spacing: 0.1em;
 }
 
